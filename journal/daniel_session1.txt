@@ -1,0 +1,24 @@
+**Name/NetID**: Daniel Nguyen dnguy634
+
+**Session Date**:  start: 4-9-2026
+                   end:4-16-2026
+
+**Objective**:  Define the *specific* goal of this session (one concrete task).
+The objective of this session was to make Phase 1 of the project and by creating the CSR from text files and analyze the sequential and parallel compute time
+**Attempts made:**
+
+- Document any difficulties or failed cases encountered.
+- Include relevant code snippets and testing results.
+An issue I ran into was understanding how the callback design worked. I realized I was suppose to assign the callback function to the cb field of each query task.
+
+- Describe how you addressed the issues.
+- Include relevant Github commits and testing results.
+I verified this by creating sequential query tasks with different parameters and callback type. 
+For example one task would count the number of nodes reachable from vertex 6 within 1 hop, and another would return the max node value reachable from vertex 6 within 2 hops.
+
+**Experiments/Analysis (if applicable)**:
+- Describe any experiments you ran to verify the correctness and/or performance of your system.
+- Give an analysis of the results, including any insights you gained from the experiments.
+
+**Learning outcome**: Briefly describe technical things you learned in this session.
+From this session, I learned how to convert a graph stored as an edge list into CSR format. I also learned how k hop queries could be implemented with a BFS traversal and the idea of callback. 
