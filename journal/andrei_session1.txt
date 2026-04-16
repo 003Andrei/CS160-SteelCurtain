@@ -1,23 +1,26 @@
 **Name/NetID**: Andrei Coloma acolo020
 
-**Session Date**:  start: 4-15-2026 @ 11:15 am
-                   end:
+**Session Date**:  start: 4-9-2026
+                   end:4-16-2026
 
 **Objective**:  Define the *specific* goal of this session (one concrete task).
-
+The objective of this session was to make Phase 1 of the project and by creating the CSR from text files and analyze the sequential and parallel compute time
 **Attempts made:**
 
 - Document any difficulties or failed cases encountered.
 - Include relevant code snippets and testing results.
-
-**Solutions/Workarounds**:
-
+My k-hop query was giving me trouble because my program would end up timing out. My get_k_hop_reachable function would continuously loop between vertices in a cycle.
+I also had a minor issue with the count_cb because it was 1 higher than expectedResult .
+The issue I learned from the most was the multithread data race. It was happening because multiple threads kept pushing onto a shared vector at the same time.
 - Describe how you addressed the issues.
 - Include relevant Github commits and testing results.
-
+I had made a boolean vector to make sure that I can mark nodes as visited and won't revisit any. I also marked the source node as visited so that x
+To stop the multithread data race, I pre-allocated tasks vector so that threads never write to the same memory location.
 **Experiments/Analysis (if applicable)**:
 
 - Describe any experiments you ran to verify the correctness and/or performance of your system.
 - Give an analysis of the results, including any insights you gained from the experiments.
-
+We observed the runtime of a K-hop query using a sequential method and a concurrent/parallel method. We also successfully evaluated the comparison between both runtimes,
+analyzed that for large files, computing a k-hop query is better done in parallel.
 **Learning outcome**: Briefly describe technical things you learned in this session.
+I was able to turn text into memory using a Compressed Sparse Row format, then perform a BFS k-hop query, and use std::thread to see how performance changes when running sequentially vs concurrently.
